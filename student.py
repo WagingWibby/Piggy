@@ -55,9 +55,18 @@ class Piggy(PiggyParent):
     ****************
     STUDENT PROJECTS
     ****************
-    '''
+    ''' 
+
+  
     def dawson(self):
-      print("This is for testing")
+      self.fwd()
+      self.sleep(2)
+      self.stop()
+
+      self.right()
+      time.sleep(2)
+      self.stop()
+            
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
