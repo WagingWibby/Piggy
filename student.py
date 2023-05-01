@@ -41,7 +41,7 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "r": ("run", self.dawson)
+                "r": ("square", self.dawson)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -61,7 +61,7 @@ class Piggy(PiggyParent):
     def dawson(self):
       for side in range(4):
         self.fwd()
-        self.sleep(2)
+        time.sleep(2)
         self.stop()
   
         self.right()
