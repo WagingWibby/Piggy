@@ -59,13 +59,14 @@ class Piggy(PiggyParent):
 
   
     def dawson(self):
-      self.fwd()
-      self.sleep(2)
-      self.stop()
-
-      self.right()
-      time.sleep(2)
-      self.stop()
+      for side in range(4):
+        self.fwd()
+        self.sleep(2)
+        self.stop()
+  
+        self.right()
+        time.sleep(2)
+        self.stop()
             
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
@@ -74,6 +75,7 @@ class Piggy(PiggyParent):
         # lower-ordered example...
         self.right(primary=50, counter=50)
         time.sleep(2)
+        self.left(primary=50, counter=50)
         self.stop()
 
     def safe_to_dance(self):
