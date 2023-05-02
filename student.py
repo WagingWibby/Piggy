@@ -73,11 +73,23 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         
         # lower-ordered example...
-        self.right(primary=50, counter=50)
+      for side in range(4):
+          self.fwd()
         time.sleep(2)
-        self.left(primary=50, counter=50)
+        self.stop()
+  
+        self.right()
+        time.sleep(1)
         self.stop()
 
+        self.fwd()
+        time.sleep(2)
+        self.stop()
+  
+        self.left()
+        time.sleep(1)
+        self.stop()
+        
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
         pass
