@@ -99,6 +99,7 @@ class Piggy(PiggyParent):
         self.turn_by_deg(90)
         if self.read_distance() < 80:
           print("not safe to dance")
+          
           return False
         self.turn_by_deg(-180)
         if self.read_distance() < 80:
@@ -106,7 +107,10 @@ class Piggy(PiggyParent):
           return False
         else:
           print("it's safe to dance")
+          self.turn_by_deg(90)
           return True
+        
+        
       
 
     def shake(self):
