@@ -41,7 +41,8 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "r": ("square", self.dawson)
+                "r": ("square", self.dawson),
+                "m": ("move till wall", self.move_till_wall),
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -57,6 +58,14 @@ class Piggy(PiggyParent):
     ****************
     ''' 
 
+    def move_till_wall(self):
+      while self.read.distance() is > 80:
+        self.fwd()
+        
+      self.stop()
+
+    
+        
   
     def dawson(self):
       for side in range(4):
