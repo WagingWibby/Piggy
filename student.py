@@ -66,21 +66,15 @@ class Piggy(PiggyParent):
         self.stop()
         time.sleep(1)
         self.servo(1000)
-        if self.read_distance() > 1000:
-          self.turn_by_deg(90)
+        time.sleep(.5)
+        self.read_distance()
         time.sleep(1)
         self.servo(-1000)
-        if self.read_distance() > 1000:
-          self.turn_by_deg(-90)
+        time.sleep(.5)
+        self.read_distance()
         time.sleep(1)
-        self.turn_by_deg(90)
         self.stop()
-
-      
-
-      
         
-  
     def dawson(self):
       for side in range(4):
         self.fwd()
