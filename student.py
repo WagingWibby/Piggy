@@ -65,11 +65,11 @@ class Piggy(PiggyParent):
           
         self.stop()
         time.sleep(1)
-        self.servo(1250)
+        self.servo(1000)
         time.sleep(.5)
         R = self.read_distance()
         time.sleep(1)
-        self.servo(1750)
+        self.servo(2000)
         time.sleep(.5)
         L = self.read_distance()
         time.sleep(1)
