@@ -60,7 +60,7 @@ class Piggy(PiggyParent):
 
     def move_till_wall(self):
       while True:
-        while self.read_distance() > 150:
+        while self.read_distance() > 100:
           self.fwd()
           
         self.stop()
@@ -74,10 +74,10 @@ class Piggy(PiggyParent):
         L = self.read_distance()
         time.sleep(1)
         self.stop()
-        '''
-        if L > R:
+        
+        if R > L:
           self.turn_by_deg(90)
-        '''
+          
     def dawson(self):
       for side in range(4):
         self.fwd()
