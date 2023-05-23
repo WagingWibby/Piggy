@@ -76,17 +76,24 @@ class Piggy(PiggyParent):
         self.stop()
         
         if R > L:
+          self.servo(1500)
           self.turn_by_deg(90)
           time.sleep(1)
           self.fwd(100)
-          time.sleep(1)
-          
-          self.fwd(10)
-          time.sleep(1)
+
           self.turn_by_deg(-90)
           time.sleep(1)
-          self.fwd(10)
+          self.fwd(100)
+
+        if L > R:
+          self.servo(1500)
+          self.turn_by_deg(-90)
           time.sleep(1)
+          self.fwd(100)
+
+          self.turn_by_deg(90)
+          time.sleep(1)
+          self.fwd(100)
           
     def dawson(self):
       for side in range(4):
