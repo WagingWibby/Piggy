@@ -84,7 +84,7 @@ class Piggy(PiggyParent):
         if L > R:
           self.servo(1500)
           time.sleep(1)
-          self.turn_by_deg(-83)
+          self.turn_by_deg(-82)
           time.sleep(1)
          
           
