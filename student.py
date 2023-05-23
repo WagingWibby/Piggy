@@ -78,6 +78,9 @@ class Piggy(PiggyParent):
         if R > L:
           self.turn_by_deg(90)
           time.sleep(1)
+          self.fwd(100)
+          time.sleep(1)
+          
           self.fwd(10)
           time.sleep(1)
           self.turn_by_deg(-90)
