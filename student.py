@@ -89,9 +89,8 @@ class Piggy(PiggyParent):
           time.sleep(.25)
           if self.read_distance() < 100:
             quit
-          
-        self.stop()
         '''
+        self.stop()
         time.sleep(1)
         self.servo(500)
         time.sleep(.5)
