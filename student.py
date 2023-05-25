@@ -73,7 +73,18 @@ class Piggy(PiggyParent):
           self.servo(1500)
           time.sleep(.25)
           if self.read_distance() < 150:
-            pass
+            self.stop()
+            time.sleep(1)
+            self.servo(500)
+            time.sleep(.5)
+            R = self.read_distance()
+            time.sleep(1)
+            self.servo(2500)
+            time.sleep(.5)
+            L = self.read_distance()
+            time.sleep(1)
+            self.stop()
+              
           time.sleep(.25)
           self.servo(1850)
           time.sleep(.25)
@@ -86,32 +97,30 @@ class Piggy(PiggyParent):
           self.servo(1500)
           time.sleep(.25)
           if self.read_distance() < 150:
-            pass
-          '''
-          self.stop()
-          time.sleep(1)
-          self.servo(500)
-          time.sleep(.5)
-          R = self.read_distance()
-          time.sleep(1)
-          self.servo(2500)
-          time.sleep(.5)
-          L = self.read_distance()
-          time.sleep(1)
-          self.stop()
+            self.stop()
+            time.sleep(1)
+            self.servo(500)
+            time.sleep(.5)
+            R = self.read_distance()
+            time.sleep(1)
+            self.servo(2500)
+            time.sleep(.5)
+            L = self.read_distance()
+            time.sleep(1)
+            self.stop()
           
-          if R > L:
-            self.servo(1500)
+            if R > L:
+              self.servo(1500)
+              time.sleep(1)
+              self.turn_by_deg(85)
+              time.sleep(1)
+          
+            if L > R:
+              self.servo(1500)
+              time.sleep(1)
+              self.turn_by_deg(-79)
             time.sleep(1)
-            self.turn_by_deg(85)
-            time.sleep(1)
-        
-          if L > R:
-            self.servo(1500)
-            time.sleep(1)
-            self.turn_by_deg(-79)
-            time.sleep(1)
-           '''
+           
           
     def dawson(self):
       for side in range(4):
