@@ -42,7 +42,7 @@ class Piggy(PiggyParent):
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
                 "r": ("square", self.dawson),
-                "m": ("move till wall", self.move_till_wall),
+                "m": ("swervin", self.swervin),
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -58,11 +58,16 @@ class Piggy(PiggyParent):
     ****************
     ''' 
 
-    def move_till_wall(self):
+    def swervin(self):
       while True:
         while self.read_distance() > 100:
           self.fwd()
-          
+          self.servo(1250)
+          time.sleep(.25)
+          self.read_distance()
+          self.servo(1750)
+          time.sleep(.25)
+          '''
         self.stop()
         time.sleep(1)
         self.servo(500)
@@ -86,7 +91,7 @@ class Piggy(PiggyParent):
           time.sleep(1)
           self.turn_by_deg(-79)
           time.sleep(1)
-         
+         '''
           
     def dawson(self):
       for side in range(4):
