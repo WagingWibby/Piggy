@@ -65,8 +65,12 @@ class Piggy(PiggyParent):
           self.servo(1250)
           time.sleep(.25)
           self.read_distance()
+          self.servo(1500)
+          time.sleep(.25)
+          self.read_distance()
           self.servo(1750)
           time.sleep(.25)
+          self.read_distance()
           '''
         self.stop()
         time.sleep(1)
