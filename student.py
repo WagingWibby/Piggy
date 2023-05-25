@@ -60,32 +60,35 @@ class Piggy(PiggyParent):
 
     def swervin(self):
       while True:
-        while self.read_distance() > 100:
+        #while self.read_distance() > 100:
           self.fwd()
           self.servo(1250)
           time.sleep(.25)
           if self.read_distance() < 100:
+            time.sleep(1)
             self.fwd(60,50)
+            time.sleep(1)
             self.fwd(50,60)
+            time.sleep(1)
           time.sleep(.25)
           self.servo(1500)
           time.sleep(.25)
           if self.read_distance() < 100:
-            self.fwd(60,50)
-            self.fwd(50,60)
+            self.stop()
           time.sleep(.25)
           self.servo(1750)
           time.sleep(.25)
           if self.read_distance() < 100:
-            self.fwd(60,50)
+            time.sleep(1)
             self.fwd(50,60)
+            time.sleep(1)
+            self.fwd(60,50)
+            time.sleep(1)
           time.sleep(.25)
           self.servo(1500)
           time.sleep(.25)
           if self.read_distance() < 100:
-            self.fwd(60,50)
-            self.fwd(50,60)
-          time.sleep(.25)
+            self.stop()
           
         self.stop()
         '''
